@@ -9,7 +9,7 @@ public class LifeManager {
         return lifeManager;
     }
 
-    class Player {
+    public class Player {
         public String Name;
         public int Life;
 

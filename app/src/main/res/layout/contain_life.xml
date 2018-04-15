@@ -1,0 +1,65 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/pL"
+        style="@style/LifeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20" />
+
+    <TextView
+        android:id="@+id/pName"
+        style="@style/LifeOwner"
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/pSub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="modifyLife"
+            android:tag="@string/p1_sub">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:alpha="0.1"
+                android:background="@drawable/subtract" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pAdd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="modifyLife"
+            android:tag="@string/p1_add">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:alpha="0.1"
+                android:background="@drawable/add" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.drkdagron.finaltracker;
 
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,14 @@ public class P2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         LifeManager.getInstance();
         setContentView(R.layout.activity_p2);
+
+        ViewPager vp = (ViewPager)findViewById(R.id.p1c);
+        PlayerAdapter p1 = new PlayerAdapter(getSupportFragmentManager(), 0);
+        vp.setAdapter(p1);
+
+        ViewPager vpp = (ViewPager)findViewById(R.id.p2c);
+        PlayerAdapter p2 = new PlayerAdapter(getSupportFragmentManager(), 1);
+        vpp.setAdapter(p2);
     }
 
     @Override
@@ -23,23 +32,7 @@ public class P2Activity extends AppCompatActivity {
         fixWindow();
     }
 
-    public void modifyLife(View v) {
-        //Log.w(TAG, v.getTag().toString().substring(3));
-        int player = Integer.parseInt(v.getTag().toString().substring(1, 2));
-        String action = v.getTag().toString().substring(3);
 
-        if (action.equals("add")) {
-            LifeManager.getInstance().players[player-1].Life++;
-        } else if (action.equals("sub")) {
-            LifeManager.getInstance().players[player-1].Life--;
-        }
-
-        if (player == 1) {
-            ((TextView)findViewById(R.id.p1L)).setText(String.valueOf(LifeManager.getInstance().players[player-1].Life));
-        } else if (player == 2) {
-            ((TextView)findViewById(R.id.p2L)).setText(String.valueOf(LifeManager.getInstance().players[player-1].Life));
-        }
-    }
 
     private void fixWindow() {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
