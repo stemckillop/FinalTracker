@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">FinalTracker</string>
+    <string name="starting_life">20</string>
+
+    <string name="p1_add">p1_add</string>
+    <string name="p1_sub">p1_sub</string>
+    <string name="p2_add">p2_add</string>
+    <string name="p2_sub">p2_sub</string>
 </resources>

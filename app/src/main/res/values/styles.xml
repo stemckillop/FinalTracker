@@ -8,4 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LifeText" parent="TextAppearance.AppCompat">
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:text">@string/starting_life</item>
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:autoSizeMinTextSize">120sp</item>
+        <item name="android:autoSizeMaxTextSize">160sp</item>
+    </style>
+
+    <style name="LifeOwner" parent="TextAppearance.AppCompat">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:autoSizeTextType">uniform</item>
+        <item name="android:autoSizeMinTextSize">25sp</item>
+        <item name="android:autoSizeMaxTextSize">30sp</item>
+        <item name="android:alpha">0.5</item>
+    </style>
+
 </resources>
