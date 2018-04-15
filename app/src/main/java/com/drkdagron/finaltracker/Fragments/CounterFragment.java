@@ -6,7 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.drkdagron.finaltracker.LifeManager;
 import com.drkdagron.finaltracker.R;
 
 public class CounterFragment extends Fragment {
@@ -26,8 +28,106 @@ public class CounterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.contain_counter, container, false);
 
+        v.findViewById(R.id.pInfectSub).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modifyInfect(getArguments().getInt(ARG_PLAYER_WATCH), false);
+            }
+        });
+        v.findViewById(R.id.pInfectAdd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modifyInfect(getArguments().getInt(ARG_PLAYER_WATCH), true);
+            }
+        });
 
+        v.findViewById(R.id.pExperSub).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modifyExperience(getArguments().getInt(ARG_PLAYER_WATCH), false);
+            }
+        });
+        v.findViewById(R.id.pExperAdd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modifyExperience(getArguments().getInt(ARG_PLAYER_WATCH), true);
+            }
+        });
+
+        v.findViewById(R.id.pEnergySub).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modifyEnergy(getArguments().getInt(ARG_PLAYER_WATCH), false);
+            }
+        });
+        v.findViewById(R.id.pEnergyAdd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modifyEnergy(getArguments().getInt(ARG_PLAYER_WATCH), true);
+            }
+        });
+
+        v.findViewById(R.id.pCmdrSub).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modifyCmdrTax(getArguments().getInt(ARG_PLAYER_WATCH), false);
+            }
+        });
+        v.findViewById(R.id.pCmdrAdd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modifyCmdrTax(getArguments().getInt(ARG_PLAYER_WATCH), true);
+            }
+        });
 
         return v;
+    }
+
+    public void modifyInfect(int player, boolean add) {
+        //Log.w(TAG, v.getTag().toString().substring(3));
+
+        if (add) {
+            LifeManager.getInstance().players[player].Infect++;
+        } else if (!add) {
+            LifeManager.getInstance().players[player].Infect--;
+        }
+
+        ((TextView)getView().findViewById(R.id.pInfect)).setText(String.valueOf(LifeManager.getInstance().players[player].Infect));
+    }
+
+    public void modifyExperience(int player, boolean add) {
+        //Log.w(TAG, v.getTag().toString().substring(3));
+
+        if (add) {
+            LifeManager.getInstance().players[player].Experience++;
+        } else if (!add) {
+            LifeManager.getInstance().players[player].Experience--;
+        }
+
+        ((TextView)getView().findViewById(R.id.pExper)).setText(String.valueOf(LifeManager.getInstance().players[player].Experience));
+    }
+
+    public void modifyEnergy(int player, boolean add) {
+        //Log.w(TAG, v.getTag().toString().substring(3));
+
+        if (add) {
+            LifeManager.getInstance().players[player].Energy++;
+        } else if (!add) {
+            LifeManager.getInstance().players[player].Energy--;
+        }
+
+        ((TextView)getView().findViewById(R.id.pEnergy)).setText(String.valueOf(LifeManager.getInstance().players[player].Energy));
+    }
+
+    public void modifyCmdrTax(int player, boolean add) {
+        //Log.w(TAG, v.getTag().toString().substring(3));
+
+        if (add) {
+            LifeManager.getInstance().players[player].CmdrTax++;
+        } else if (!add) {
+            LifeManager.getInstance().players[player].CmdrTax--;
+        }
+
+        ((TextView)getView().findViewById(R.id.pTax)).setText(String.valueOf(LifeManager.getInstance().players[player].CmdrTax));
     }
 }

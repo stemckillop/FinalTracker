@@ -14,6 +14,7 @@ public class PlayerAdapter extends FragmentPagerAdapter {
 
     public PlayerAdapter(FragmentManager fm, int player) {
         super(fm);
+        this.player = player;
     }
 
     @Override
@@ -25,9 +26,9 @@ public class PlayerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         Fragment frag = null;
         if (position == 0) {
-            frag = LifeFragment.newInstance(1);
+            frag = LifeFragment.newInstance(player);
         } else if (position == 1) {
-            frag = new CounterFragment();
+            frag = CounterFragment.newInstance(player);
         }
 
         return frag;
