@@ -41,19 +41,6 @@ public class CounterFragment extends Fragment {
             }
         });
 
-        v.findViewById(R.id.pExperSub).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                modifyExperience(getArguments().getInt(ARG_PLAYER_WATCH), false);
-            }
-        });
-        v.findViewById(R.id.pExperAdd).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                modifyExperience(getArguments().getInt(ARG_PLAYER_WATCH), true);
-            }
-        });
-
         v.findViewById(R.id.pEnergySub).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,19 +51,6 @@ public class CounterFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 modifyEnergy(getArguments().getInt(ARG_PLAYER_WATCH), true);
-            }
-        });
-
-        v.findViewById(R.id.pCmdrSub).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                modifyCmdrTax(getArguments().getInt(ARG_PLAYER_WATCH), false);
-            }
-        });
-        v.findViewById(R.id.pCmdrAdd).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                modifyCmdrTax(getArguments().getInt(ARG_PLAYER_WATCH), true);
             }
         });
 
@@ -95,18 +69,6 @@ public class CounterFragment extends Fragment {
         ((TextView)getView().findViewById(R.id.pInfect)).setText(String.valueOf(LifeManager.getInstance().players[player].Infect));
     }
 
-    public void modifyExperience(int player, boolean add) {
-        //Log.w(TAG, v.getTag().toString().substring(3));
-
-        if (add) {
-            LifeManager.getInstance().players[player].Experience++;
-        } else if (!add) {
-            LifeManager.getInstance().players[player].Experience--;
-        }
-
-        ((TextView)getView().findViewById(R.id.pExper)).setText(String.valueOf(LifeManager.getInstance().players[player].Experience));
-    }
-
     public void modifyEnergy(int player, boolean add) {
         //Log.w(TAG, v.getTag().toString().substring(3));
 
@@ -117,17 +79,5 @@ public class CounterFragment extends Fragment {
         }
 
         ((TextView)getView().findViewById(R.id.pEnergy)).setText(String.valueOf(LifeManager.getInstance().players[player].Energy));
-    }
-
-    public void modifyCmdrTax(int player, boolean add) {
-        //Log.w(TAG, v.getTag().toString().substring(3));
-
-        if (add) {
-            LifeManager.getInstance().players[player].CmdrTax++;
-        } else if (!add) {
-            LifeManager.getInstance().players[player].CmdrTax--;
-        }
-
-        ((TextView)getView().findViewById(R.id.pTax)).setText(String.valueOf(LifeManager.getInstance().players[player].CmdrTax));
     }
 }

@@ -1,24 +1,22 @@
 package com.drkdagron.finaltracker;
 
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
-public class P2Activity extends AppCompatActivity {
-    public final String TAG = "P2Activity";
+public class P3Activity extends AppCompatActivity {
+    public final String TAG = "P3Activity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LifeManager.getInstance();
-        setContentView(R.layout.activity_p2);
+        LifeManager.getInstance().resetPlayers(3);
+        setContentView(R.layout.activity_p3);
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             ViewPager vp = (ViewPager)findViewById(Constants.Pagers[i]);
-            vp.setOffscreenPageLimit(2);
             PlayerAdapter pa = new PlayerAdapter(getSupportFragmentManager(), i);
             vp.setAdapter(pa);
         }

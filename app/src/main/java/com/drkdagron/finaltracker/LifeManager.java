@@ -29,19 +29,14 @@ public class LifeManager {
     public Player[] players;
 
     public LifeManager() {
-        players = new Player[2];
-        resetPlayers();
-    }
-
-    public LifeManager(int p) {
-        players = new Player[p];
-        resetPlayers();
+        resetPlayers(2);
     }
 
     /*
     /This function will reset the players lives and names (usually used if going from 3 players -> 4 players
     */
-    public void resetPlayers() {
+    public void resetPlayers(int count) {
+        players = new Player[count];
         for (int i =0; i < players.length; i++) {
             players[i] = new Player();
         }

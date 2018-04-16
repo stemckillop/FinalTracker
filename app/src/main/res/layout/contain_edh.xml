@@ -18,11 +18,11 @@
             android:autoSizeMaxTextSize="20sp"
             android:autoSizeMinTextSize="10sp"
             android:autoSizeTextType="uniform"
-            android:text="Infect"
+            android:text="Experience"
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/pInfect"
+            android:id="@+id/pExper"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -40,7 +40,7 @@
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:id="@+id/pInfectSub"
+                android:id="@+id/pExperSub"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -54,7 +54,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/pInfectAdd"
+                android:id="@+id/pExperAdd"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -85,11 +85,11 @@
             android:autoSizeMaxTextSize="20sp"
             android:autoSizeMinTextSize="10sp"
             android:autoSizeTextType="uniform"
-            android:text="Energy"
+            android:text="Cmdr Tax"
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/pEnergy"
+            android:id="@+id/pTax"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -107,7 +107,7 @@
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:id="@+id/pEnergySub"
+                android:id="@+id/pCmdrSub"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
@@ -121,7 +121,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/pEnergyAdd"
+                android:id="@+id/pCmdrAdd"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1">

@@ -3,6 +3,7 @@ package com.drkdagron.finaltracker.Fragments;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import com.drkdagron.finaltracker.LifeManager;
 import com.drkdagron.finaltracker.R;
 
 public class LifeFragment extends Fragment {
+    public static final String TAG = "LifeFragment";
     private static final String ARG_PLAYER_WATCH = "player_watch";
     public int playerWatching;
 
@@ -27,6 +29,8 @@ public class LifeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.contain_life, container, false);
+
+        ((TextView)v.findViewById(R.id.pL)).setText(String.valueOf(LifeManager.getInstance().players[getArguments().getInt(ARG_PLAYER_WATCH)].Life));
 
         v.findViewById(R.id.pAdd).setOnClickListener(new View.OnClickListener() {
             @Override
